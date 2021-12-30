@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="wardDetailsFormContext" prefHeight="990.0" prefWidth="1900.0" style="-fx-background-color: #F2F0FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WardDetailsFormController">
+   <children>
+      <AnchorPane layoutX="838.0" layoutY="26.0" prefHeight="482.0" prefWidth="1036.0" style="-fx-background-color: #666473; -fx-background-radius: 20;">
+         <children>
+            <TextField fx:id="txtBedNo" layoutX="632.0" layoutY="156.0" prefHeight="48.0" prefWidth="351.0" promptText="Bed No">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtAdmitDate" layoutX="36.0" layoutY="272.0" onKeyReleased="#admitDate_keyRealeased" prefHeight="48.0" prefWidth="357.0" promptText="Admit date">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </TextField>
+            <JFXButton buttonType="RAISED" layoutX="123.0" layoutY="391.0" onAction="#addOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #82CAFF;" text="Add" textFill="#ebe5e5">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="374.0" layoutY="391.0" onAction="#updateOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #82CAFF;" text="Update" textFill="#ebe5e5">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="667.0" layoutY="383.0" onAction="#deleteOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FF0000;" text="Delete" textFill="#ebe5e5">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <TextField fx:id="txtAvailabilityRooms" layoutX="629.0" layoutY="283.0" prefHeight="48.0" prefWidth="357.0" promptText="Availability of rooms">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="cmbBedNo" layoutX="629.0" layoutY="93.0" prefHeight="48.0" prefWidth="351.0" promptText="Bed No" />
+            <ComboBox fx:id="cmbNurseId" layoutX="36.0" layoutY="26.0" prefHeight="48.0" prefWidth="200.0" promptText="Nurse Id" />
+            <TextField fx:id="txtNurseName" layoutX="263.0" layoutY="26.0" prefHeight="48.0" prefWidth="279.0" promptText="Nurse Name">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtWardNo" layoutX="559.0" layoutY="26.0" prefHeight="48.0" prefWidth="239.0" promptText="Ward No">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="cmbPatientId" layoutX="36.0" layoutY="93.0" prefHeight="48.0" prefWidth="357.0" promptText="Patient Id" />
+            <TextField fx:id="txtPatientId" layoutX="39.0" layoutY="180.0" prefHeight="48.0" prefWidth="351.0" promptText="Patient Id">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="36.0" fitWidth="33.0" layoutX="136.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/add.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="33.0" layoutX="386.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/refresh.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="33.0" layoutX="679.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/dustbin.png" />
+               </image>
+            </ImageView>
+            <ComboBox fx:id="cmbAvailable" layoutX="632.0" layoutY="217.0" prefHeight="48.0" prefWidth="351.0" promptText="Availability" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblWard" layoutX="857.0" layoutY="533.0" prefHeight="443.0" prefWidth="998.0" stylesheets="@../style/CSS1.css">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="208.0" text="Patient Id" />
+          <TableColumn fx:id="colBedNo" prefWidth="198.0" text="Bed No" />
+            <TableColumn fx:id="colAdmitDate" prefWidth="310.0" text="Admit date" />
+            <TableColumn fx:id="colAvailabilityRooms" prefWidth="285.0" text="Availability of Rooms" />
+        </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="22.0" layoutY="887.0" onAction="#backToDoctorFormOnAction" prefHeight="78.0" prefWidth="124.0" style="-fx-background-color: #004E00; -fx-background-radius: 30;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <AnchorPane layoutY="154.0" prefHeight="711.0" prefWidth="329.0">
+         <children>
+            <ImageView fitHeight="255.0" fitWidth="377.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/bed.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="37.0" layoutY="88.0" prefHeight="36.0" prefWidth="124.0" text="Open bed">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="132.0" prefHeight="36.0" prefWidth="134.0" text="Closed bed ">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="183.0" prefHeight="36.0" prefWidth="166.0" text="Occupird bed">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="259.0" fitWidth="368.0" layoutY="253.0" opacity="0.83" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/beds.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="41.0" layoutY="368.0" prefHeight="36.0" prefWidth="152.0" text="Blanket bed">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="39.0" layoutY="422.0" prefHeight="35.0" prefWidth="152.0" text="Fracture bed">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="481.0" prefHeight="36.0" prefWidth="173.0" text="Operation bed">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="549.0" prefHeight="36.0" prefWidth="144.0" text="Cardiac bed">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="612.0" prefHeight="36.0" prefWidth="187.0" text="Amputation bed">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="66.0" layoutY="24.0" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: #666473; -fx-background-radius: 20;">
+               <children>
+                  <Label layoutX="17.0" prefHeight="36.0" prefWidth="166.0" text="Simple beds" textFill="#0f0a3c">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="61.0" layoutY="267.0" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: #666473; -fx-background-radius: 20;">
+               <children>
+                  <Label layoutX="24.0" layoutY="2.0" prefHeight="36.0" prefWidth="152.0" text="Special beds" textFill="#202022">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="385.0" layoutY="154.0" prefHeight="827.0" prefWidth="433.0">
+         <children>
+            <ImageView fitHeight="316.0" fitWidth="433.0" layoutX="2.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/ss.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="469.0" fitWidth="433.0" layoutY="463.0" opacity="0.67" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/wrd.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="113.0" layoutY="96.0" prefHeight="36.0" prefWidth="152.0" text="General ward">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="94.0" layoutY="161.0" prefHeight="36.0" prefWidth="211.0" text="Semi-special room">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="123.0" layoutY="238.0" prefHeight="36.0" prefWidth="152.0" text="Special ward">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="113.0" layoutY="312.0" prefHeight="36.0" prefWidth="152.0" text="Deluxe room">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="144.0" layoutY="389.0" prefHeight="36.0" prefWidth="68.0" text="CCU">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="144.0" layoutY="463.0" prefHeight="36.0" prefWidth="74.0" text="ICCU">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="144.0" layoutY="549.0" prefHeight="36.0" prefWidth="90.0" text="SICU">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="144.0" layoutY="646.0" prefHeight="36.0" prefWidth="90.0" text="PICU">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="119.0" layoutY="22.0" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #666473; -fx-background-radius: 20;">
+               <children>
+                  <Label layoutX="20.0" layoutY="4.0" prefHeight="36.0" prefWidth="187.0" text="Types of ward" textFill="#212022">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="62.0" fitWidth="74.0" layoutX="53.0" layoutY="895.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/previous.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="48.0" layoutY="26.0" prefHeight="75.0" prefWidth="564.0" style="-fx-background-color: #666473; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="99.0" layoutY="4.0" prefHeight="75.0" prefWidth="340.0" text="Ward Details" textFill="#f2ecf2">
+               <font>
+                  <Font name="System Bold" size="52.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

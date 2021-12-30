@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="userContext" prefHeight="624.0" prefWidth="707.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserController">
+   <children>
+      <TextField fx:id="txtUserName" layoutX="126.0" layoutY="196.0" onAction="#userNameOnAction" onKeyReleased="#userNameKeyEvent" prefHeight="48.0" prefWidth="452.0" promptText="User Name" />
+      <TextField fx:id="txtPassWord" layoutX="126.0" layoutY="413.0" onAction="#passWordOnAction" onKeyReleased="#passWordKeyEvent" prefHeight="48.0" prefWidth="452.0" promptText="Password" />
+      <TextField fx:id="txtFullName" layoutX="126.0" layoutY="270.0" onAction="#fullNameOnAction" onKeyReleased="#fullNameKeyEvent" prefHeight="48.0" prefWidth="452.0" promptText="Full Name" />
+      <TextField fx:id="txtEmail" layoutX="126.0" layoutY="341.0" onAction="#emailOnAction" onKeyReleased="#emailKeyEvent" prefHeight="48.0" prefWidth="452.0" promptText="Email" />
+      <JFXButton buttonType="RAISED" layoutX="230.0" layoutY="517.0" onAction="#addOnAction" prefHeight="58.0" prefWidth="248.0" style="-fx-background-color: #1589FF;" text="Add">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </JFXButton>
+      <ComboBox fx:id="cmbRoleType" layoutX="126.0" layoutY="133.0" prefHeight="40.0" prefWidth="452.0" promptText="Role Type" />
+      <Label layoutX="202.0" layoutY="31.0" prefHeight="47.0" prefWidth="322.0" text="Create New Account">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

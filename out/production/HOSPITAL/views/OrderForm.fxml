@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="orderFormContext" prefHeight="990.0" prefWidth="1900.0" style="-fx-background-color: #DBF9DB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderFormController">
+   <children>
+      <TableView fx:id="tblOrders" layoutX="34.0" layoutY="183.0" prefHeight="697.0" prefWidth="1833.0" stylesheets="@../style/Appointment.css">
+        <columns>
+          <TableColumn fx:id="colPId" prefWidth="248.00003051757812" text="Pharmacist Id" />
+          <TableColumn fx:id="colPName" prefWidth="394.9999694824219" text="Pharmacist Name" />
+            <TableColumn fx:id="colOrderId" prefWidth="356.0" text="Order Id" />
+            <TableColumn fx:id="colOrderDate" prefWidth="421.0" text="Order Date" />
+            <TableColumn fx:id="colTotalCost" prefWidth="411.0" text="Total Cost" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="71.0" layoutY="910.0" onAction="#backToPharmacistOnAction" prefHeight="63.0" prefWidth="111.0" style="-fx-background-color: #004E00;" />
+      <ImageView fitHeight="49.0" fitWidth="56.0" layoutX="99.0" layoutY="914.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/previous.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="658.0" layoutY="42.0" prefHeight="77.0" prefWidth="492.0" style="-fx-background-color: #004E00; -fx-background-radius: 30;">
+         <children>
+            <Label alignment="CENTER" layoutX="33.0" layoutY="-1.0" prefHeight="86.0" prefWidth="426.0" text="Order Form" textFill="#d3ddd4">
+               <font>
+                  <Font name="System Bold" size="59.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="833.0" prefWidth="1130.0" style="-fx-background-color: #62FD7B;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemDetailsFormController">
+   <children>
+      <TableView fx:id="tblMedicalDetails" layoutX="62.0" layoutY="235.0" prefHeight="497.0" prefWidth="1037.0" stylesheets="@../style/Appointment.css">
+        <columns>
+          <TableColumn fx:id="colProductCode" prefWidth="293.0" text="Product Code" />
+          <TableColumn fx:id="colQty" prefWidth="374.0" text="Qty" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="368.0" text="Unit Price" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="282.0" layoutY="35.0" prefHeight="69.0" prefWidth="598.0" style="-fx-background-color: #046307; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="105.0" layoutY="1.0" prefHeight="69.0" prefWidth="388.0" text="Product Details Form" textFill="#e4f2e5">
+               <font>
+                  <Font name="System Bold" size="39.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="62.0" layoutY="138.0" prefHeight="69.0" prefWidth="332.0" style="-fx-background-color: #000000; -fx-background-radius: 30;">
+         <children>
+            <Label fx:id="lblOrderId" layoutX="177.0" layoutY="14.0" prefHeight="41.0" prefWidth="140.0" text="O-001" textFill="#edf5ed">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="14.0" prefHeight="41.0" prefWidth="112.0" text="Order Id:" textFill="#f8f1f1">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="718.0" layoutY="754.0" prefHeight="51.0" prefWidth="356.0" style="-fx-background-color: #808080;" stylesheets="@../style/Appointment.css">
+         <children>
+            <Label fx:id="lblTotalCost" layoutX="202.0" layoutY="5.0" prefHeight="41.0" prefWidth="140.0" text="20000 /=" textFill="#d71919">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="5.0" prefHeight="41.0" prefWidth="140.0" text="Total cost:" textFill="#e81414">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

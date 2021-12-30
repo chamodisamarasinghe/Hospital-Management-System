@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="productFormContext" prefHeight="990.0" prefWidth="1900.0" style="-fx-background-color: #D9FFAC;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductFormController">
+   <children>
+      <TableView fx:id="tblProducts" layoutX="412.0" layoutY="124.0" prefHeight="852.0" prefWidth="597.0" stylesheets="@../style/Appointment.css">
+        <columns>
+          <TableColumn fx:id="colCode" prefWidth="121.0" text="Code" />
+          <TableColumn fx:id="colName" prefWidth="182.0" text="Product Name" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="184.0" text="Unit Price" />
+            <TableColumn fx:id="colQty" prefWidth="109.0" text="Qty" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="14.0" layoutY="121.0" prefHeight="764.0" prefWidth="388.0" style="-fx-background-color: #89C35C; -fx-background-radius: 20;">
+         <children>
+            <TextField fx:id="txtProductCode" layoutX="31.0" layoutY="96.0" prefHeight="51.0" prefWidth="305.0" promptText="Product Code">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txtProductName" layoutX="31.0" layoutY="255.0" prefHeight="51.0" prefWidth="305.0" promptText="Product Name">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txtUnitPrice" layoutX="31.0" layoutY="325.0" onKeyReleased="#unitPrice_keyRealeased" prefHeight="51.0" prefWidth="305.0" promptText="Unit Price">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txtQty" layoutX="31.0" layoutY="404.0" onKeyReleased="#qty_keyRealeased" prefHeight="51.0" prefWidth="305.0" promptText="Qty On Hand">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></TextField>
+            <JFXButton buttonType="RAISED" layoutX="62.0" layoutY="487.0" onAction="#addOnAction" prefHeight="51.0" prefWidth="200.0" style="-fx-background-color: #82CAFF;" text="Add" textFill="#ebe3e3">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="62.0" layoutY="557.0" onAction="#updateOnAction" prefHeight="51.0" prefWidth="200.0" style="-fx-background-color: #82CAFF;" text="Update" textFill="#fcf6f6">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="62.0" layoutY="632.0" onAction="#deleteOnAction" prefHeight="51.0" prefWidth="200.0" style="-fx-background-color: #FF0000;" text="Delete" textFill="#f2eded">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ComboBox fx:id="cmbProductName" layoutX="31.0" layoutY="170.0" prefHeight="51.0" prefWidth="305.0" promptText="Product Name" />
+            <ImageView fitHeight="39.0" fitWidth="35.0" layoutX="74.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/add.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="35.0" layoutX="74.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/refresh.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="35.0" layoutX="74.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/dustbin.png" />
+               </image>
+            </ImageView>
+            <ComboBox fx:id="cmbProductName1" layoutX="31.0" layoutY="30.0" prefHeight="51.0" prefWidth="305.0" promptText="Product Code" />
+         </children>
+      </AnchorPane>
+      <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="898.0" onAction="#backToPlaceOrder" prefHeight="70.0" prefWidth="135.0" style="-fx-background-color: #004E00; -fx-background-radius: 30;" text="Back">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <ImageView fitHeight="60.0" fitWidth="68.0" layoutX="69.0" layoutY="903.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/previous.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="261.0" layoutY="23.0" prefHeight="73.0" prefWidth="479.0" style="-fx-background-color: #008000; -fx-background-radius: 39;">
+         <children>
+            <Label alignment="CENTER" layoutX="99.0" layoutY="8.0" prefHeight="51.0" prefWidth="305.0" text="Product Form" textFill="#f7fcf6">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1016.0" layoutY="21.0" prefHeight="949.0" prefWidth="858.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="23.0" prefHeight="51.0" prefWidth="231.0" style="-fx-background-color: #66CDAA; -fx-background-radius: 20;">
+               <children>
+                  <Label layoutX="23.0" layoutY="6.0" prefHeight="39.0" prefWidth="194.0" text="Health &amp; Wellness">
+                     <font>
+                        <Font name="System Bold Italic" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="30.0" layoutY="102.0" prefHeight="39.0" prefWidth="200.0" text="Multi-Vitamins">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="141.0" prefHeight="39.0" prefWidth="221.0" text="Speciality supplements">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="180.0" prefHeight="39.0" prefWidth="221.0" text="Nutrition Drinks">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="219.0" prefHeight="39.0" prefWidth="221.0" text="Health food and drinks">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="258.0" prefHeight="39.0" prefWidth="221.0" text="Protein Supplements">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="25.0" layoutY="321.0" prefHeight="51.0" prefWidth="231.0" style="-fx-background-color: #66CDAA; -fx-background-radius: 20;">
+               <children>
+                  <Label alignment="CENTER" layoutX="23.0" layoutY="6.0" prefHeight="39.0" prefWidth="194.0" text="Beauty">
+                     <font>
+                        <Font name="System Bold Italic" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="30.0" layoutY="403.0" prefHeight="39.0" prefWidth="221.0" text="Skin Care">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="442.0" prefHeight="39.0" prefWidth="221.0" text="Hair Care">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="481.0" prefHeight="39.0" prefWidth="221.0" text="Face Care">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="520.0" prefHeight="39.0" prefWidth="221.0" text="Eye Care">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="566.0" prefHeight="39.0" prefWidth="221.0" text="Body Care">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="25.0" layoutY="635.0" prefHeight="51.0" prefWidth="231.0" style="-fx-background-color: #66CDAA; -fx-background-radius: 20;">
+               <children>
+                  <Label alignment="CENTER" layoutX="23.0" layoutY="6.0" prefHeight="39.0" prefWidth="194.0" text="All Categories">
+                     <font>
+                        <Font name="System Bold Italic" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="30.0" layoutY="713.0" prefHeight="39.0" prefWidth="221.0" text="Mother &amp; Baby">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="752.0" prefHeight="39.0" prefWidth="221.0" text="Medical Devices">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="791.0" prefHeight="39.0" prefWidth="221.0" text="Diabetes">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="830.0" prefHeight="39.0" prefWidth="221.0" text="Fitness &amp; Supplements">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="869.0" prefHeight="39.0" prefWidth="221.0" text="Ayurveda">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="238.0" layoutY="713.0" prefHeight="39.0" prefWidth="221.0" text="Health &amp; Wellness">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="238.0" layoutY="752.0" prefHeight="39.0" prefWidth="221.0" text="Pet Care">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="476.0" layoutY="362.0" prefHeight="200.0" prefWidth="296.0" style="-fx-background-color: #000000;">
+               <children>
+                  <ImageView fitHeight="71.0" fitWidth="100.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/beauty.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="69.0" fitWidth="100.0" layoutX="130.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/abn.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="67.0" fitWidth="100.0" layoutX="17.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/be.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="73.0" fitWidth="100.0" layoutX="132.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/hai.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="67.0" fitWidth="100.0" layoutX="216.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/bod.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="476.0" layoutY="74.0" prefHeight="200.0" prefWidth="296.0" style="-fx-background-color: #000000;">
+               <children>
+                  <ImageView fitHeight="88.0" fitWidth="107.0" layoutX="22.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/capsules.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="71.0" fitWidth="107.0" layoutX="154.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/v.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="71.0" fitWidth="107.0" layoutX="40.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/vit.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="71.0" fitWidth="107.0" layoutX="154.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/vit.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="476.0" layoutY="661.0" prefHeight="200.0" prefWidth="296.0" style="-fx-background-color: #000000;">
+               <children>
+                  <ImageView fitHeight="73.0" fitWidth="91.0" layoutX="13.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/b.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="67.0" fitWidth="73.0" layoutX="112.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/dev.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="71.0" fitWidth="73.0" layoutX="198.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/612c56d1d51f1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="26.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/bab.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="73.0" fitWidth="107.0" layoutX="123.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/moth.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="btnDetail" buttonType="RAISED" layoutX="194.0" layoutY="908.0" onMouseClicked="#generateSqlChart" prefHeight="51.0" prefWidth="200.0" style="-fx-background-color: #82CAFF;" text="Product Detail" textFill="#ebe3e3">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

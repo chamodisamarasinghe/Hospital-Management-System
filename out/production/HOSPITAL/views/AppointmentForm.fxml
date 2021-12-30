@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="appointmentFormContext" prefHeight="990.0" prefWidth="1900.0" style="-fx-background-color: #E3FFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AppointmentFormController">
+   <children>
+      <TableView fx:id="tblAppointments" layoutX="27.0" layoutY="149.0" prefHeight="740.0" prefWidth="1824.0">
+        <columns>
+          <TableColumn fx:id="colPatientNo" prefWidth="283.0000305175781" text="Patient No" />
+          <TableColumn fx:id="colPatientName" prefWidth="454.0" text="Patient Name" />
+            <TableColumn fx:id="colAppointmentNo" prefWidth="322.0" text="Appointment No" />
+            <TableColumn fx:id="colAppointmentDate" prefWidth="402.0" text="Appointment Date" />
+            <TableColumn fx:id="colPayment" prefWidth="362.0" text="Payment" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="578.0" layoutY="36.0" prefHeight="78.0" prefWidth="524.0" text="Appointment Form" textFill="#3915c9">
+         <font>
+            <Font name="System Bold" size="46.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="37.0" layoutY="902.0" onAction="#backToOnAction" prefHeight="67.0" prefWidth="126.0" style="-fx-background-color: #004E00;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="55.0" fitWidth="66.0" layoutX="67.0" layoutY="908.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/previous.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

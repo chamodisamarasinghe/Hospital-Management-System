@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="labDetailsFormContext" prefHeight="990.0" prefWidth="1900.0" style="-fx-background-color: #95B9C7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LabDetailsController">
+   <children>
+      <AnchorPane layoutX="6.0" layoutY="14.0" prefHeight="855.0" prefWidth="826.0" style="-fx-background-color: #000076;">
+         <children>
+            <TextField fx:id="txtDoctorName" layoutX="52.0" layoutY="577.0" prefHeight="44.0" prefWidth="637.0" promptText="Doctor Name">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtPatientId" layoutX="52.0" layoutY="237.0" prefHeight="44.0" prefWidth="637.0" promptText="Patient Id">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </TextField>
+            <JFXButton buttonType="RAISED" layoutX="240.0" layoutY="638.0" onAction="#saveOnAction" prefHeight="51.0" prefWidth="259.0" style="-fx-background-color: #82CAFF;" text="Add" textFill="#eee9e9">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="240.0" layoutY="714.0" onAction="#updateOnAction" prefHeight="51.0" prefWidth="259.0" style="-fx-background-color: #82CAFF;" text="Update" textFill="#eee9e9">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="240.0" layoutY="782.0" onAction="#deleteOnAction" prefHeight="51.0" prefWidth="259.0" style="-fx-background-color: #FF0000;" text="Delete" textFill="#eee9e9">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <TextField fx:id="txtBloodTypes" layoutX="52.0" layoutY="371.0" prefHeight="44.0" prefWidth="637.0" promptText="Blood types">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtTestings" layoutX="52.0" layoutY="506.0" prefHeight="44.0" prefWidth="637.0" promptText="Test">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="cmbBloodTypes" layoutX="52.0" layoutY="302.0" prefHeight="50.0" prefWidth="637.0" promptText="blood Types" />
+            <ComboBox fx:id="cmbTestings" layoutX="52.0" layoutY="433.0" prefHeight="50.0" prefWidth="637.0" promptText="Tesings" />
+            <ImageView fitHeight="196.0" fitWidth="548.0" layoutX="112.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/lab.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="260.0" layoutY="646.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/add.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="260.0" layoutY="722.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/refresh.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="260.0" layoutY="790.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/dustbin.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="502.0" layoutY="161.0" prefHeight="21.0" prefWidth="184.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblLabDetail" layoutX="921.0" layoutY="194.0" prefHeight="774.0" prefWidth="950.0" stylesheets="@../style/DoctorForm.css">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="171.0" text="Patient Id" />
+          <TableColumn fx:id="colBloodType" prefWidth="218.0" text="Blood Type" />
+            <TableColumn fx:id="colTestings" prefWidth="293.0" text="Testings" />
+            <TableColumn fx:id="colName" prefWidth="267.0" text="Doctor Name" />
+        </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="52.0" layoutY="883.0" onAction="#backToDoctorFormOnAction" prefHeight="85.0" prefWidth="108.0" style="-fx-background-color: #004E00;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="50.0" fitWidth="54.0" layoutX="80.0" layoutY="902.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/previous.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="1219.0" layoutY="45.0" prefHeight="73.0" prefWidth="482.0" style="-fx-background-color: #000076; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="130.0" layoutY="3.0" prefHeight="47.0" prefWidth="281.0" text="Lab Details" textFill="#edecf2">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

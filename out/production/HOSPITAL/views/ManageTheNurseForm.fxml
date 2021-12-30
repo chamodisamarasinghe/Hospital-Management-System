@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="nurseDetailsFormContext" opacity="0.82" prefHeight="990.0" prefWidth="1900.0" style="-fx-background-color: #95B9C7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageTheNurseFormController">
+   <children>
+      <AnchorPane layoutX="20.0" layoutY="21.0" prefHeight="864.0" prefWidth="698.0" style="-fx-background-color: #000076;">
+         <children>
+            <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="197.0" layoutY="574.0" onAction="#addOnAction" prefHeight="57.0" prefWidth="245.0" style="-fx-background-color: #0000FF;" text="Add" textFill="#f2ecec">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="197.0" layoutY="644.0" onAction="#updateOnAction" prefHeight="57.0" prefWidth="245.0" style="-fx-background-color: #82CAFF;" text="Update" textFill="#f2ecec">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="197.0" layoutY="719.0" onAction="#deleteOnAction" prefHeight="57.0" prefWidth="245.0" style="-fx-background-color: #FF0000;" text="Delete" textFill="#f2ecec">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="468.0" layoutY="631.0" onAction="#searchOnAction" prefHeight="57.0" prefWidth="156.0" style="-fx-background-color: #82CAFF;" text="Search" textFill="#f2ecec" visible="false">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="45.0" fitWidth="39.0" layoutX="215.0" layoutY="583.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/add.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="208.0" layoutY="728.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/dustbin.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="208.0" layoutY="653.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/refresh.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="195.0" fitWidth="245.0" layoutX="208.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/nursepic.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="60.0" layoutY="245.0" prefHeight="57.0" prefWidth="586.0" style="-fx-background-color: white; -fx-border-width: 20;">
+               <children>
+                  <TextField fx:id="txtNurseId" layoutX="41.0" layoutY="6.0" onKeyReleased="#nurseId_keyRealeased" prefHeight="45.0" prefWidth="519.0" promptText="Nurse Id" style="-fx-border-width: 50;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="60.0" layoutY="489.0" prefHeight="57.0" prefWidth="586.0" style="-fx-background-color: white; -fx-border-width: 20;">
+               <children>
+                  <TextField fx:id="txtWardNo" layoutX="23.0" layoutY="6.0" onKeyReleased="#wardNo_keyRealeased" prefHeight="45.0" prefWidth="519.0" promptText="Ward No">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="60.0" layoutY="411.0" prefHeight="57.0" prefWidth="586.0" style="-fx-background-color: white; -fx-border-width: 20;">
+               <children>
+                  <TextField fx:id="txtRoomNo" layoutX="20.0" layoutY="6.0" onKeyReleased="#roomNo_keyRealeased" prefHeight="45.0" prefWidth="519.0" promptText="Room No">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="60.0" layoutY="324.0" prefHeight="57.0" prefWidth="586.0" style="-fx-background-color: white; -fx-border-width: 20;">
+               <children>
+                  <TextField fx:id="txtName" layoutX="24.0" layoutY="8.0" onKeyReleased="#nurseName_keyRealeased" prefHeight="45.0" prefWidth="519.0" promptText="Nurse Name">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblNurse" layoutX="777.0" layoutY="174.0" prefHeight="785.0" prefWidth="1084.0" stylesheets="@../style/NurseForm.css">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="247.0" text="Nurse Id" />
+          <TableColumn fx:id="colName" prefWidth="304.0" text="Nurse name" />
+            <TableColumn fx:id="colRoomNo" prefWidth="266.0" text="Room No" />
+            <TableColumn fx:id="colWardNo" prefWidth="265.0" text="Ward No" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="28.0" layoutY="903.0" onAction="#backToReceptionOnAction" prefHeight="73.0" prefWidth="102.0" style="-fx-background-color: #004E00;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <ComboBox fx:id="cmbNurseId" layoutX="777.0" layoutY="49.0" prefHeight="45.0" prefWidth="189.0" promptText="Nurse Id" visible="false" />
+      <TextField fx:id="txtName1" layoutX="1003.0" layoutY="49.0" prefHeight="45.0" prefWidth="270.0" promptText="Nurse Name" visible="false">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtRoomNo1" layoutX="1003.0" layoutY="101.0" prefHeight="45.0" prefWidth="270.0" promptText="Room No" visible="false">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtWardNo1" layoutX="1003.0" layoutY="160.0" prefHeight="45.0" prefWidth="270.0" promptText="Ward No" visible="false">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="57.0" fitWidth="73.0" layoutX="51.0" layoutY="911.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/previous.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="966.0" layoutY="35.0" prefHeight="73.0" prefWidth="606.0" style="-fx-background-color: #000076; -fx-background-radius: 30;">
+         <children>
+            <Label alignment="CENTER" layoutX="125.0" prefHeight="73.0" prefWidth="379.0" text="Nurse Details" textFill="#e1e1eb">
+               <font>
+                  <Font name="System Bold" size="50.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
