@@ -20,5 +20,5 @@
 <img src="src/assets/img/16.png">
 <img src="src/assets/img/17.png">
 <img src="src/assets/img/18.png">
-<img src="src/assets/img/20.png">
+
 
