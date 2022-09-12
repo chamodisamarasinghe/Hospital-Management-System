@@ -4,3 +4,5 @@
 <img src="src/assets/img/1.png">
 <img src="src/assets/img/2.png">
 <img src="src/assets/img/3.png">
+<img src="src/assets/img/4.png">
+<img src="src/assets/img/log.png">
